@@ -10,6 +10,7 @@ circleSize = drum*4;
   fill (255, 171, 216); //light pink
   ellipse(300,circleY, circleSize);
   
+  //making circleY consistently increase by Y, moving down thje page everytime it loops
   circleY = circleY + 1
 
   //adding if statement for loop
