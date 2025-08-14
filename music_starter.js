@@ -6,8 +6,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(24);
   
+  //space between bars
    let bar_spacing = height / 10;
+   //width of bars
    let bar_height = width / 12;
+   //x position of bars on screen
    let bar_pos_x = width / 2;
  
 // changes 
