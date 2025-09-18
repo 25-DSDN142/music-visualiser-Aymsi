@@ -23,10 +23,18 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 beginShape();
-  vertex(500, 250);
-  vertex(750, 500);
-  vertex(500, 750);
-  vertex()
+  vertex(500, 350); //was 375
+  vertex(525, 450); //was 475
+  vertex(625, 450);
+  vertex(550, 500);
+  vertex(625, 550);
+  vertex(525, 550);
+  vertex(500, 650); //was 625
+  vertex(475, 550);
+  vertex(375, 550);
+  vertex(450, 500);
+  vertex(375, 450);
+  vertex(475, 450);
 
 endShape(CLOSE);
 
