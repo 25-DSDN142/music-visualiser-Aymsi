@@ -22,7 +22,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 
+
 beginShape();
+fill(0);
+stroke(255);
+strokeWeight(10);
+
   vertex(500, 350); //Y was 375
   vertex(525, 450); //Y was 475
   //adjust below vertex to sit higher for better distribution of star points
