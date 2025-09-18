@@ -32,19 +32,19 @@ fill(0);
 stroke(255);
 strokeWeight(10);
 
-  vertex(500, 350); //Y was 375
-  vertex(525, 450); //Y was 475
-  //adjust below vertex to sit higher for better distribution of star points
-  vertex(625, 425); //Y was 450, changed to 425!
-  vertex(550, 500);
-  vertex(625, 575); //Y was 550
-  vertex(525, 550);
-  vertex(500, 650); //Y was 625
-  vertex(475, 550);
-  vertex(375, 575); //Y was 550
-  vertex(450, 500);
-  vertex(375, 425); //Y was 450
-  vertex(475, 450);
+//comments are original points of star before translation 500,500 and changing points to be based off of centre point of canvas being 0
+  vertex(0, -150); //was 500, 350
+  vertex(25, -50); //was 525, 450
+  vertex(125, -75); //was 625, 425
+  vertex(50, 0); //was 550, 500
+  vertex(125, 75); //was 625, 575
+  vertex(25, 50); //was 525, 550
+  vertex(0, 150); //was 500, 650
+  vertex(-25, 50); //was 475, 550
+  vertex(-125, 75); //was 375, 575
+  vertex(-50, 0); //was 450, 500
+  vertex(-125, -75); //was 375, 425
+  vertex(-25, -50); //was 475, 450
 
 endShape(CLOSE);
 
