@@ -28,12 +28,14 @@ angleMode(RADIANS);
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
 let scaleFactor = map(drum, 50, 100, 1, 4); //drum input to scale range
 
-let starSpin = map(vocal, 0, 1, 0, TWO_PI);
+let targetAngle = map(vocal, 0, 1, 0, TWO_PI);
 
 smooth = lerp(smooth, scaleFactor, 0.35); //adding smoothing to make scaling not jittery
 
+rotationAngle = lerp(rotationAngle, targetAngle, 0.1);
+
 translate(500,500);
-rotate(starSpin);
+rotate(rotationAngle);
 scale(smooth);
 
 beginShape();
