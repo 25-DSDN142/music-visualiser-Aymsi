@@ -1,6 +1,10 @@
 let circleY = 350;
 let circleSize;
 
+//idea behind this: scale changing dependant on quiet vs loud drum
+//map(drum, minimum drum range, *need to figure out maximum drum range*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
+let scaleFactor = map(drum, 0, 1, 1, 4);
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(200)
@@ -20,9 +24,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // circleY = 0
 // }
 
-//idea behind this: scale changing dependant on quiet vs loud drum
-//map(drum, minimum drum range, *need to figure out maximum drum range*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
-let scaleFactor = map(drum, 0, 1, 1, 4);
+
 
 translate(500,500);
 scale(scaleFactor);
