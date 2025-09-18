@@ -5,7 +5,8 @@ let circleSize;
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(20)
   //basing scale of circle width on drums of song
-circleSize = map();
+  //map(what you're mapping, minimum of range, maximum of range, your custom minimum range, your custom maximum range)
+circleSize = map(drum, 0, 100, 50, 400);
 
   fill (255, 171, 216); //light pink
   ellipse(300,circleY, circleSize);
