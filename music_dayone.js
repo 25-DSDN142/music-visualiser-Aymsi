@@ -23,17 +23,18 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 beginShape();
-  vertex(500, 350); //was 375
-  vertex(525, 450); //was 475
-  vertex(625, 450);
+  vertex(500, 350); //Y was 375
+  vertex(525, 450); //Y was 475
+  //adjust below vertex to sit higher for better distribution of star points
+  vertex(625, 425); //Y was 450, changed to 425!
   vertex(550, 500);
-  vertex(625, 550);
+  vertex(625, 575); //Y was 550
   vertex(525, 550);
-  vertex(500, 650); //was 625
+  vertex(500, 650); //Y was 625
   vertex(475, 550);
-  vertex(375, 550);
+  vertex(375, 575); //Y was 550
   vertex(450, 500);
-  vertex(375, 450);
+  vertex(375, 425); //Y was 450
   vertex(475, 450);
 
 endShape(CLOSE);
