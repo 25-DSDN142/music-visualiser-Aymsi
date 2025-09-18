@@ -9,7 +9,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 circleSize = map(drum, 0, 100, 50, 400);
 
   fill (255, 171, 216); //light pink
-  ellipse(300,circleY, circleSize);
+  //ellipse(300,circleY, circleSize);
   
   //making circleY consistently increase by Y, moving down thje page everytime it loops
   circleY = circleY + 1
@@ -19,4 +19,11 @@ circleSize = map(drum, 0, 100, 50, 400);
   if (circleY > 1000) {
    circleY = 0
   }
+}
+
+function Star(){
+
+beginShape();
+fill(255);
+vertex ()
 }
