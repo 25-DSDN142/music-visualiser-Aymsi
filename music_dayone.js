@@ -35,9 +35,26 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 //let P = color('#d6b2f0')
 
 //x, y, w, h
-ellipse(0, 250, 50, 50)
+//adding background reference circle outline
+noFill();
+strokeWeight(5);
 
-ellipse(0)
+ellipse(0, 0, 800, 800);
+
+fill(255);
+strokeWeight(1);
+//top ellipse
+ellipse(0, 400, 50, 50);
+//bottom ellipse
+ellipse(0, -400, 50, 50);
+//right top ellipse
+ellipse(400, -150, 50, 50);
+//right bottom ellipse
+ellipse(400, 150, 50, 50);
+//left top ellipse
+ellipse(-400, -150, 50, 50);
+//left bottom ellipse
+ellipse(-400, 150, 50, 50);
 
 angleMode(RADIANS);
 //idea behind this: scale changing dependant on quiet vs loud drum
