@@ -4,11 +4,11 @@ let circleSize;
 let smooth = 1; //consistency for scale 
 let rotationAngle = 0 //base angle no rotation
 
-const rotationMinimum = 30 //lots of adjustment to number
+const rotationMinimum = 40 //lots of adjustment to number
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(200)
+  background(0)
   //basing scale of circle width on drums of song
   //map(what you're mapping, minimum of range, maximum of range, your custom minimum range, your custom maximum range)
 //circleSize = map(drum, 0, 100, 50, 400);
@@ -25,6 +25,15 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // circleY = 0
 // }
 
+let R = color('#ffc9de')
+let O = color('#fdd97c')
+let Y = color('#fbfdaa')
+let G = color('#c1f0b2')
+let B = color('#b2e4f0')
+let P = color('#d6b2f0')
+
+
+
 angleMode(RADIANS);
 //idea behind this: scale changing dependant on quiet vs loud drum
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
@@ -40,7 +49,7 @@ if (vocal > rotationMinimum) {
 } else {
   targetAngle = 0;
 }
-rotationAngle = lerp(rotationAngle, targetAngle, 0.1);
+rotationAngle = lerp(rotationAngle, targetAngle, 0.05);
 
 translate(500,500);
 rotate(rotationAngle);
@@ -50,6 +59,9 @@ beginShape();
 fill(0);
 stroke(255);
 strokeWeight(10);
+strokeColor(strokeColor)
+
+strokeColor = lerpColor()
 
 //comments are original points of star before translation 500,500 and changing points to be based off of centre point of canvas being 0
   vertex(0, -150); //was 500, 350
@@ -66,5 +78,6 @@ strokeWeight(10);
   vertex(-25, -50); //was 475, 450
 
 endShape(CLOSE);
+
 
 }
