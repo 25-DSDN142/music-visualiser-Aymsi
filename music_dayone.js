@@ -4,11 +4,13 @@ let circleSize;
 let smooth = 1; //consistency for scale 
 let rotationAngle = 0 //base angle no rotation
 
-const rotationMinimum = 40 //lots of adjustment to number
+const rotationMinimum = 40 //lots of adjustment to number //40 is good
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0)
+
+  translate(500,500);
   //basing scale of circle width on drums of song
   //map(what you're mapping, minimum of range, maximum of range, your custom minimum range, your custom maximum range)
 //circleSize = map(drum, 0, 100, 50, 400);
@@ -32,7 +34,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 //let B = color('#b2e4f0')
 //let P = color('#d6b2f0')
 
+//x, y, w, h
+ellipse(0, 250, 50, 50)
 
+ellipse(0)
 
 angleMode(RADIANS);
 //idea behind this: scale changing dependant on quiet vs loud drum
@@ -51,7 +56,6 @@ if (vocal > rotationMinimum) {
 }
 rotationAngle = lerp(rotationAngle, targetAngle, 0.05);
 
-translate(500,500);
 rotate(rotationAngle);
 scale(smooth);
 
@@ -78,6 +82,5 @@ strokeWeight(10);
   vertex(-25, -50); //was 475, 450
 
 endShape(CLOSE);
-
 
 }
