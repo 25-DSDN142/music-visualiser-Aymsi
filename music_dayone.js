@@ -59,7 +59,7 @@ ellipse(-400, 150, 50, 50);
 angleMode(RADIANS);
 //idea behind this: scale changing dependant on quiet vs loud drum
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
-let scaleFactor = map(drum, 50, 100, 1, 4); //drum input to scale range
+let scaleFactor = map(drum, 50, 100, 0.5, 3); //drum input to scale range
 
 smooth = lerp(smooth, scaleFactor, 0.35); //adding smoothing to make scaling not jittery
 
