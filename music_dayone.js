@@ -25,12 +25,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // circleY = 0
 // }
 
-let R = color('#ffc9de')
-let O = color('#fdd97c')
-let Y = color('#fbfdaa')
-let G = color('#c1f0b2')
-let B = color('#b2e4f0')
-let P = color('#d6b2f0')
+//let R = color('#ffc9de')
+//let O = color('#fdd97c')
+//let Y = color('#fbfdaa')
+//let G = color('#c1f0b2')
+//let B = color('#b2e4f0')
+//let P = color('#d6b2f0')
 
 
 
@@ -59,9 +59,9 @@ beginShape();
 fill(0);
 stroke(255);
 strokeWeight(10);
-strokeColor(strokeColor)
+//strokeColor(strokeColor)
 
-strokeColor = lerpColor()
+//strokeColor = lerpColor()
 
 //comments are original points of star before translation 500,500 and changing points to be based off of centre point of canvas being 0
   vertex(0, -150); //was 500, 350
