@@ -39,27 +39,32 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 noFill();
 strokeWeight(5);
 
-ellipse(0, 0, 800, 800);
+let r = 400
+circle (0, 0, r * 2);
 
-fill(255);
-strokeWeight(1);
+
+
+
+//fill(255);
+//strokeWeight(1);
+
 //top ellipse
-ellipse(0, 400, 50, 50);
+//ellipse(0, 400, 50, 50);
 //bottom ellipse
-ellipse(0, -400, 50, 50);
+//ellipse(0, -400, 50, 50);
 //right top ellipse
-ellipse(400, -150, 50, 50);
+//ellipse(400, -150, 50, 50);
 //right bottom ellipse
-ellipse(400, 150, 50, 50);
+//ellipse(400, 150, 50, 50);
 //left top ellipse
-ellipse(-400, -150, 50, 50);
+//ellipse(-400, -150, 50, 50);
 //left bottom ellipse
-ellipse(-400, 150, 50, 50);
+//ellipse(-400, 150, 50, 50);
 
 angleMode(RADIANS);
 //idea behind this: scale changing dependant on quiet vs loud drum
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
-let scaleFactor = map(drum, 50, 100, 0.5, 3); //drum input to scale range
+let scaleFactor = map(drum, 50, 100, 1, 3); //drum input to scale range
 
 smooth = lerp(smooth, scaleFactor, 0.35); //adding smoothing to make scaling not jittery
 
