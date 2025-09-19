@@ -4,7 +4,7 @@ let circleSize;
 let smooth = 1; //consistency for scale 
 let rotationAngle = 0 //base angle no rotation
 
-const rotationMinimum = 0.3 //will be adjusted 
+const rotationMinimum = 30 //lots of adjustment to number
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
@@ -30,14 +30,20 @@ angleMode(RADIANS);
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
 let scaleFactor = map(drum, 50, 100, 1, 4); //drum input to scale range
 
-let targetAngle = map(vocal, rotationMinimum, 1, 0, TWO_PI);
-
 smooth = lerp(smooth, scaleFactor, 0.35); //adding smoothing to make scaling not jittery
 
-rotationAngle = lerp(rotationAngle, targetAngle, 0.5);
+//let targetAngle = map(vocal, rotationMinimum, 1, 0, TWO_PI);
+
+let targetAngle;
+if (vocal > rotationMinimum) {
+  targetAngle = map(vocal, rotationMinimum, 1, 0, TWO_PI);
+} else {
+  targetAngle = 0;
+}
+rotationAngle = lerp(rotationAngle, targetAngle, 0.1);
 
 translate(500,500);
-rotate(targetAngle);
+rotate(rotationAngle);
 scale(smooth);
 
 beginShape();
