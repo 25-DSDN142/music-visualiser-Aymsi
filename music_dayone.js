@@ -1,6 +1,9 @@
 let circleY = 350;
 let circleSize;
 
+let angle = 0 //for rotating circle points!
+let speed = 0.01
+
 let smooth = 1; //consistency for scale 
 let rotationAngle = 0 //base angle no rotation
 
@@ -42,9 +45,13 @@ strokeWeight(5);
 let r = 400
 circle (0, 0, r * 2);
 
+strokeWeight(50);
+stroke(250, 230, 30);
+let x = r * cos(angle);
+let y = r * sin(angle);
+point(x, y);
 
-
-
+angle += speed 
 //fill(255);
 //strokeWeight(1);
 
