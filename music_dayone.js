@@ -28,9 +28,16 @@ angleMode(RADIANS);
 colorMode(HSB, 360, 100, 100);
 
 //circle code - drawn based off of bass
-stroke(255);
 strokeWeight(6);
 noFill();
+
+//adding pastel rainbow shift when bass is high!
+hueValue = (hueValue += 2) % 360;
+if (bass < 80) {
+  stroke(hueValue, 40, 95); //pastel rainbow shift on high bass
+} else {
+  stroke(255); //white otherwise!
+}
 
 //let increment = map(bass, 0, 100, 0.01, PI);
 let increment = 0.1;
@@ -140,10 +147,6 @@ if (bass > 80) {
 } else {
   stroke(255); //white otherwise!
 }
-
-//strokeColor(strokeColor)
-
-//strokeColor = lerpColor()
 
 //comments are original points of star before translation 500,500 and changing points to be based off of centre point of canvas being 0
   vertex(0, -150); //was 500, 350
