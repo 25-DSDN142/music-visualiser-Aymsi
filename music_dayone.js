@@ -8,7 +8,7 @@ let rotationAngle = 0 //base angle no rotation
 let backstarsmooth = 1; //consistency for scale 
 let backstarrotationAngle = 0 //base angle no rotation
 
-let rotationMinimum = 25 //lots of adjustment to number //40 is good
+let rotationMinimum = 30 //lots of adjustment to number //40 is good
 
 //copied for backstar
 let backstarrotationMinimum = 80 //lots of adjustment to number
@@ -33,17 +33,16 @@ let increment = 0.1;
 let bassStrength = map(bass, 80, 100, 0, 100);
 
 beginShape();
+//drawing circle shape, telling it to constantly draw to a full circle
 for (let a = 0; a < TWO_PI; a += increment) {
 
+  //basspulse and bassstrength effect how it is moved by bass
   let bassPulse = sin(a * 6 + frameCount * 0.1) * bassStrength;
 
   let radius = r + bassPulse;
 
   let x = radius * cos(a);
   let y = radius * sin(a);
-  //let basseffect = r - map(bass, 0, 100, bass, bass);
-  //let x = basseffect * cos(a);
-  //let y = basseffect * sin(a);
   vertex(x, y);
 }
 
@@ -70,23 +69,8 @@ endShape(CLOSE);
 //point(x, y);
 
 //angle += speed 
-//fill(255);
-//strokeWeight(1);
 
-//top ellipse
-//ellipse(0, 400, 50, 50);
-//bottom ellipse
-//ellipse(0, -400, 50, 50);
-//right top ellipse
-//ellipse(400, -150, 50, 50);
-//right bottom ellipse
-//ellipse(400, 150, 50, 50);
-//left top ellipse
-//ellipse(-400, -150, 50, 50);
-//left bottom ellipse
-//ellipse(-400, 150, 50, 50);
-
-let backstarscaleFactor = map(bass, 75, 100, 1, 3); //drum input to scale range
+let backstarscaleFactor = map(bass, 80, 100, 1, 2); //drum input to scale range
 
 backstarsmooth = lerp(backstarsmooth, backstarscaleFactor, 0.1); //adding smoothing to make scaling not jittery
 
@@ -129,9 +113,9 @@ endShape(CLOSE);
 
 //idea behind this: scale changing dependant on quiet vs loud drum
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
-let scaleFactor = map(drum, 75, 100, 1, 2); //drum input to scale range
+let scaleFactor = map(drum, 70, 100, 1, 2); //drum input to scale range
 
-smooth = lerp(smooth, scaleFactor, 0.25); //adding smoothing to make scaling not jittery
+smooth = lerp(smooth, scaleFactor, 0.15); //adding smoothing to make scaling not jittery
 
 //let targetAngle = map(vocal, rotationMinimum, 1, 0, TWO_PI);
 
@@ -149,7 +133,7 @@ scale(smooth);
 beginShape();
 fill(0);
 stroke(255);
-strokeWeight(10);
+strokeWeight(5);
 //strokeColor(strokeColor)
 
 //strokeColor = lerpColor()
