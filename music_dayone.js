@@ -20,7 +20,13 @@ let hueValue = 0
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(0)
+//colour changing background, between two
+  let baseBG = color(0);
+  let pulseBG = color(255);
+
+  let pulsingBG = lerpColor(baseBG, pulseBG, map(drum, 80, 100, 0, 1));
+
+  background(pulsingBG);
 angleMode(RADIANS);
   translate(500,500);
 
