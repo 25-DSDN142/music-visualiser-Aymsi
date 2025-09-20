@@ -13,11 +13,29 @@ let rotationMinimum = 50 //lots of adjustment to number //40 is good
 //copied for backstar
 let backstarrotationMinimum = 80 //lots of adjustment to number //40 is good
 
+let r = 400
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0)
 angleMode(RADIANS);
   translate(500,500);
+
+stroke(255);
+strokeWeight(4);
+noFill();
+
+//let increment = map(bass, 0, 100, 0.01, PI);
+let increment = 0.1;
+
+beginShape();
+for (let a = 0; a < TWO_PI; a += increment) {
+  let x = r * cos(a);
+  let y = r * sin(a);
+  vertex(x, y);
+}
+
+endShape(CLOSE);
 
 //let R = color('#ffc9de')
 //let O = color('#fdd97c')
@@ -141,3 +159,6 @@ strokeWeight(10);
 endShape(CLOSE);
 
 }
+
+
+
