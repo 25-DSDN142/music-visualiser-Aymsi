@@ -8,10 +8,10 @@ let rotationAngle = 0 //base angle no rotation
 let backstarsmooth = 1; //consistency for scale 
 let backstarrotationAngle = 0 //base angle no rotation
 
-let rotationMinimum = 50 //lots of adjustment to number //40 is good
+let rotationMinimum = 25 //lots of adjustment to number //40 is good
 
 //copied for backstar
-let backstarrotationMinimum = 80 //lots of adjustment to number //40 is good
+let backstarrotationMinimum = 80 //lots of adjustment to number
 
 let r = 400
 
