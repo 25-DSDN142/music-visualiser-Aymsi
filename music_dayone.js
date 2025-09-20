@@ -48,13 +48,6 @@ for (let a = 0; a < TWO_PI; a += increment) {
 
 endShape(CLOSE);
 
-//let R = color('#ffc9de')
-//let O = color('#fdd97c')
-//let Y = color('#fbfdaa')
-//let G = color('#c1f0b2')
-//let B = color('#b2e4f0')
-//let P = color('#d6b2f0')
-
 //adding background reference circle outline
 //noFill();
 //strokeWeight(5);
