@@ -15,15 +15,17 @@ let backstarrotationMinimum = 80 //lots of adjustment to number
 
 let r = 400
 
-//for rainbow colour shift
+//for rainbow colourshift!
 let hueValue = 0
-colorMode(HSB, 360, 100, 100);
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0)
 angleMode(RADIANS);
   translate(500,500);
+
+//for rainbow colour shift - colorMode must be inside draw function!
+colorMode(HSB, 360, 100, 100);
 
 //circle code - drawn based off of bass
 stroke(255);
@@ -130,7 +132,9 @@ scale(smooth);
 beginShape();
 fill(0);
 strokeWeight(5);
+
 //adding pastel rainbow shift when bass is high!
+hueValue = (hueValue += 2) % 360;
 if (bass > 80) {
   stroke(hueValue, 40, 95); //pastel rainbow shift on high bass
 } else {
