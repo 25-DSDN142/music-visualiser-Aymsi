@@ -30,12 +30,12 @@ noFill();
 let increment = 0.1;
 
 //controlling how the bass pulses in the shape
-let bassStrength = map(bass, 0, 100, 0, 50);
+let bassStrength = map(bass, 80, 100, 0, 100);
 
 beginShape();
 for (let a = 0; a < TWO_PI; a += increment) {
 
-  let bassPulse = sin(a * 4 + frameCount * 0.1) * bassStrength;
+  let bassPulse = sin(a * 6 + frameCount * 0.1) * bassStrength;
 
   let radius = r + bassPulse;
 
