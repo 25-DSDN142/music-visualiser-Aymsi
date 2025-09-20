@@ -1,6 +1,3 @@
-let circleY = 350;
-let circleSize;
-
 let angle = 0 //for rotating circle points!
 let speed = 0.01
 
@@ -14,21 +11,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0)
 angleMode(RADIANS);
   translate(500,500);
-  //basing scale of circle width on drums of song
-  //map(what you're mapping, minimum of range, maximum of range, your custom minimum range, your custom maximum range)
-//circleSize = map(drum, 0, 100, 50, 400);
-
-  //fill (255, 171, 216); //light pink
-  //ellipse(300,circleY, circleSize);
-  
-  //making circleY consistently increase by Y, moving down thje page everytime it loops
-  //circleY = circleY + 1
-
-  //adding if statement for loop
-  //if it reaches the bottom of the page, make it go back to the top of the page
- // if (circleY > 1000) {
-  // circleY = 0
-// }
 
 //let R = color('#ffc9de')
 //let O = color('#fdd97c')
@@ -37,11 +19,10 @@ angleMode(RADIANS);
 //let B = color('#b2e4f0')
 //let P = color('#d6b2f0')
 
-//x, y, w, h
 //adding background reference circle outline
 noFill();
 strokeWeight(5);
-
+//rotating point around circle
 let r = 400
 circle (0, 0, r * 2);
 
@@ -70,7 +51,7 @@ angle += speed
 
 //idea behind this: scale changing dependant on quiet vs loud drum
 //map(drum, minimum drum range, *max drum range to hit edge on loudest part*, 0.25 of full 1000,1000 res star shape being 1, 4 being largest size reaching 1000,1000 edge of canvas)
-let scaleFactor = map(drum, 50, 100, 1, 3); //drum input to scale range
+let scaleFactor = map(drum, 50, 100, 1, 3.5); //drum input to scale range
 
 smooth = lerp(smooth, scaleFactor, 0.35); //adding smoothing to make scaling not jittery
 
