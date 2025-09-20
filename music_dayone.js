@@ -21,6 +21,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 angleMode(RADIANS);
   translate(500,500);
 
+//circle code - drawn based off of bass
 stroke(255);
 strokeWeight(4);
 noFill();
@@ -28,11 +29,21 @@ noFill();
 //let increment = map(bass, 0, 100, 0.01, PI);
 let increment = 0.1;
 
+//controlling how the bass pulses in the shape
+let bassStrength = map(bass, 0, 100, 0, 50);
+
 beginShape();
 for (let a = 0; a < TWO_PI; a += increment) {
-  let basseffect = r - map(bass, 0, 100, bass, bass);
-  let x = basseffect * cos(a);
-  let y = basseffect * sin(a);
+
+  let bassPulse = sin(a * 4 + frameCount * 0.1) * bassStrength;
+
+  let radius = r + bassPulse;
+
+  let x = radius * cos(a);
+  let y = radius * sin(a);
+  //let basseffect = r - map(bass, 0, 100, bass, bass);
+  //let x = basseffect * cos(a);
+  //let y = basseffect * sin(a);
   vertex(x, y);
 }
 
