@@ -27,19 +27,19 @@ angleMode(RADIANS);
 //let P = color('#d6b2f0')
 
 //adding background reference circle outline
-noFill();
-strokeWeight(5);
+//noFill();
+//strokeWeight(5);
 //rotating point around circle
-let r = 400
-circle (0, 0, r * 2);
+//let r = 400
+//circle (0, 0, r * 2);
 
-strokeWeight(50);
-stroke(255);
-let x = r * cos(angle);
-let y = r * sin(angle);
-point(x, y);
+//strokeWeight(50);
+//stroke(255);
+//let x = r * cos(angle);
+//let y = r * sin(angle);
+//point(x, y);
 
-angle += speed 
+//angle += speed 
 //fill(255);
 //strokeWeight(1);
 
