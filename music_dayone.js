@@ -30,8 +30,9 @@ let increment = 0.1;
 
 beginShape();
 for (let a = 0; a < TWO_PI; a += increment) {
-  let x = r * cos(a);
-  let y = r * sin(a);
+  let basseffect = r - map(bass, 0, 100, bass, bass);
+  let x = basseffect * cos(a);
+  let y = basseffect * sin(a);
   vertex(x, y);
 }
 
