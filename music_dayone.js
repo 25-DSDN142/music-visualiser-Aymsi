@@ -8,7 +8,7 @@ let rotationAngle = 0 //base angle no rotation
 let backstarsmooth = 1; //consistency for scale 
 let backstarrotationAngle = 0 //base angle no rotation
 
-let rotationMinimum = 30 //lots of adjustment to number //40 is good
+let rotationMinimum = 40 //lots of adjustment to number //40 is good
 
 //copied for backstar
 let backstarrotationMinimum = 80 //lots of adjustment to number
@@ -33,7 +33,7 @@ noFill();
 
 //adding pastel rainbow shift when bass is high!
 hueValue = (hueValue += 2) % 360;
-if (bass < 80) {
+if (bass < 75) {
   stroke(hueValue, 40, 95); //pastel rainbow shift on high bass
 } else {
   stroke(255); //white otherwise!
@@ -94,9 +94,16 @@ rotate(backstarrotationAngle);
 scale(backstarsmooth);
 
 beginShape();
-fill(255);
+
+hueValue = (hueValue += 2) % 360;
+if (bass < 75) {
+  fill(hueValue, 40, 95); //pastel rainbow shift on high bass
+} else {
+  fill(255); //white otherwise!
+}
+
 stroke(255);
-strokeWeight(10);
+strokeWeight(6);
 //strokeColor(strokeColor)
 
 //strokeColor = lerpColor()
