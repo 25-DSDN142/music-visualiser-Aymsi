@@ -52,6 +52,8 @@ let rotationAngle = 0 //base angle no rotation
 
 const rotationMinimum = 40 //lots of adjustment to number //40 is good
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0)

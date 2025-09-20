@@ -110,9 +110,6 @@ if (bass < 75) {
 
 stroke(255);
 strokeWeight(6);
-//strokeColor(strokeColor)
-
-//strokeColor = lerpColor()
 
 //comments are original points of star before translation 500,500 and changing points to be based off of centre point of canvas being 0
   vertex(0, -150); //was 500, 350
